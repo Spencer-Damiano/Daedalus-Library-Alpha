@@ -1,4 +1,5 @@
 const semicircles = document.querySelectorAll('.semicircle');
+const timer = document.querySelector('.timer');
 
 
 //input
@@ -37,14 +38,35 @@ function countDownTimer() {
 
 
     //timer
+    const hrs = Math.floor(remainingTime / 3600000).toString().padStart(2, '0') ;
+    const mins = Math.floor((remainingTime % 3600000) / 60000).toString().padStart(2, '0');
+    const secs = Math.floor((remainingTime % 60000) / 1000).toString().padStart(2, '0'); 
+
+    // const hrs = Math.floor(remainingTime / (1000 * 60 * 60) % 24).toString().padStart(2, '0') ;
+    // const mins = Math.floor(remainingTime / (1000 * 60) % 60).toString().padStart(2, '0');
+    // const secs = Math.floor((remainingTime / 1000) % 60).toString().padStart(2, '0');
+
+    timer.innerHTML = `${hrs}:${mins}:${secs}`;
 
     // 5 second warning
-
+    if (remainingTime <= 6000) {
+        timer.style.color = `red`;
+        semicircles[0].style.backgroundColor = `red`;
+        semicircles[1].style.backgroundColor = `red`;
+    }
     
 
     // end
     if (remainingTime <= 0) {
         clearInterval(timerLoop);
+
+        semicircles[0].style.display = `none`;
+        semicircles[1].style.display = `none`;
+        semicircles[2].style.display = `none`;
+
+        timer.innerHTML = `TIMES UP!`;
+
+        timer.style.color = `gray`;
         return;
     }
 }
