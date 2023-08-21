@@ -23,6 +23,7 @@ function countDownTimer() {
     const remainingTime = futureTime - currentTime;
     const angle = remainingTime / setTime * 360;
 
+
     // progress indicator
 
     if(angle > 180){
@@ -42,9 +43,6 @@ function countDownTimer() {
     const mins = Math.floor((remainingTime % 3600000) / 60000).toString().padStart(2, '0');
     const secs = Math.floor((remainingTime % 60000) / 1000).toString().padStart(2, '0'); 
 
-    // const hrs = Math.floor(remainingTime / (1000 * 60 * 60) % 24).toString().padStart(2, '0') ;
-    // const mins = Math.floor(remainingTime / (1000 * 60) % 60).toString().padStart(2, '0');
-    // const secs = Math.floor((remainingTime / 1000) % 60).toString().padStart(2, '0');
 
     timer.innerHTML = `${hrs}:${mins}:${secs}`;
 

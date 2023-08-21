@@ -6,7 +6,31 @@
   box-sizing: border-box;
 }
 
-/* LEFT OFF AT https://youtu.be/uHVPAcaW1VQ?t=941*/
+:root {
+
+    --background-img-src: url("../images/the-great-wave.png");
+
+    /* Colors */
+    --sixty-color: #088b8b;
+    --thirty-color: #ddd;
+    --ten-color: #fff;
+
+    /* This is to change the size of the progress indicator */
+    --circle-container-size: 400px; 
+    /* The differences in these two numbers create 
+    line thinness or thickness */
+    --outermost-circle-size: 385px;
+
+
+}
+.background {
+    padding: 5px;
+    /* FIGURE THIS OUT, NEED TO ADD BACKGROUND PHOTOS  */
+    background-image: var(--background-img-src);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 html {
     font-family: 'Roboto Mono', monospace;
@@ -22,19 +46,20 @@ html {
 .main-container {
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: transparent;
 }
 
 /* Progress Indicator Code */
 
 .circle-container {
-    width: 400px;
-    height: 400px;
+    width: var(--circle-container-size);
+    height: var(--circle-container-size);
     border-radius: 50%;
     background-color: #ddd;
     position: absolute;
     z-index: 1;
     overflow: hidden;
+    opacity: .5;
 }
 
 .semicircle {
@@ -47,13 +72,13 @@ html {
 }
 
 .semicircle:nth-child(1){
-    background-color: red;
+    background-color: red; /* use for testing*/
     background-color: #088b8b;
     z-index: 2;
 }
 
 .semicircle:nth-child(2){
-    background-color: blue;
+    background-color: blue; /* use for testing*/
     background-color: #088b8b;
     z-index: 3;
 }
@@ -63,16 +88,36 @@ html {
     z-index: 4;
 }
 
-.outermost-circle {
-    width: 390px;
-    height: 390px;
+/*
+.five-second-circle {
+    I added this in due to a bug that was coming up once the circle past the 180deg point
+    where it would show the red bar progressing past the 0deg mark, the idea was to have a flashing
+    red circle appear when there was X seconds left. possibly revisit as a feature
+    width: var(--circle-container-size);
+    height: var(--circle-container-size);
     border-radius: 50%;
-    background-color: white;
+    background-color: red;
+    position: absolute;
     z-index: 5;
-    /* display: none; */
+    display: none;
+}
+*/
+.outermost-circle {
+    width: var(--outermost-circle-size);
+    height: var(--outermost-circle-size);
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 5;
+    
 }
 
 /* hover testing */
+
+/* 
+IF THERE IS AN ERROR WHERE THE TIMER KEEPS SPINNING IT IS PROBABLY BECAUSE OF SOMETHING
+BELOW THIS COMMENT, KEEP BELOW COMMENTED OUT UNLESS TESTING
+*/
+
 /* .main-container:hover .semicircle:nth-child(1){
     transform: rotate(180deg);
     transition: 1s linear;
