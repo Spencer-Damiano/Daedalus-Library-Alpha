@@ -4,11 +4,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 :root {
 
+
+    --font-family: 'Roboto Mono', monospace;
+
+    --logo-size: 100px;
+
     --background-img-src: url("../images/the-great-wave.png");
+    --background-img-size: 1920px 1080px;
+
+    
 
     /* Colors */
     --sixty-color: #088b8b;
@@ -23,24 +32,39 @@
 
 
 }
+
 .background {
     padding: 5px;
-    /* FIGURE THIS OUT, NEED TO ADD BACKGROUND PHOTOS  */
     background-image: var(--background-img-src);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: var(--background-img-size);
     background-position: center;
 }
 
+
 html {
-    font-family: 'Roboto Mono', monospace;
+    font-family: var(--font-family);
     color: navy;
+
+    /* background-image: var(--background-img-src);
+    background-repeat: no-repeat;
+    background-size: var(--background-img-size);
+    background-position: center; */
 }
 
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.header {
+    background-color: transparent;
+}
+
+.logo {
+    width: var(--logo-size);
+    height: var(--logo-size);
 }
 
 .main-container {
