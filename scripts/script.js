@@ -68,3 +68,5 @@ function countDownTimer() {
         return;
     }
 }
+
+// MUSIC PLAYER
