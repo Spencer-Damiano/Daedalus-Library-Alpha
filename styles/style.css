@@ -15,7 +15,7 @@
     --logo-size: 100px;
 
     --background-img-src: url("../images/the-great-wave.png");
-    --background-img-size: 1920px 1080px;
+    --background-img-size: cover;
 
     --settings-img-src: url("../images/settings.png");
 
@@ -87,6 +87,10 @@ html {
     z-index: 1;
     overflow: hidden;
     opacity: .5;
+
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .semicircle {
@@ -167,12 +171,19 @@ BELOW THIS COMMENT, KEEP BELOW COMMENTED OUT UNLESS TESTING
     width: 330px;
     height: 200px;
     z-index: 6;
+
+    
 }
 
 .timer {
     width: 400px;
     height: 100px;
     z-index: 7;
+
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .timer div {
@@ -206,6 +217,7 @@ Bottom Bar Code
     height: 5%;
     z-index: 0;
 
+    opacity: .85;
     
 }
 
@@ -297,7 +309,7 @@ Bottom Bar Code
 
 .distraction-entry {
     background-color: orange;
-    width: 80%;
+    width: 100%;
     height: 80%;
     z-index: 2;
     float: left;
@@ -308,6 +320,11 @@ Bottom Bar Code
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+.distraction-input {
+    width: 60%;
+    height: 80%;
 }
 
 .distraction-show-btn {
@@ -326,7 +343,7 @@ Bottom Bar Code
     width: 20%;
     height: 80%;
     z-index: 2;
-    float: right;
+    float: none;
     padding: auto;
 
     margin: 0;

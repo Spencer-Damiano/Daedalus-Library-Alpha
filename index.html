@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro</title>
+  <title>Daedalus-Library</title>
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
   <div class="background">
     <div class="header center">
       <button class="btn"><i class="fa fa-bars"></i></button>
-      <img class="logo center" src="images/delta-logo.png" alt="Daedalus Library">
+      <img class="logo center" src="images/delta-logo-light.png" alt="Daedalus Library">
     </div>
     <div class="main-container center">
       <!-- Progress Indicator Code -->
@@ -36,19 +36,38 @@
         <div class="tool-bench">
 
           <div class="todo-list">
+
             <div class="todo-entry">
-              <div class="todo-show-btn"></div>
+              <button class="todo-show-btn">^</button>
+              <input type="text" class="todo">
             </div>
-            <div class="todo-add"></div>
+
+            <button class="todo-add"></button>
+
+            <div class="todo-container">
+              <div class="todo-content"></div>
+            </div>
+
           </div>
 
-          <div class="audio-bar"></div>
+          <div class="audio-bar">
+            <!-- music bar -->
+            <!-- sound scape -->
+            <!-- envierment noise -->
+          </div>
 
           <div class="distraction-list">
-            <div class="distraction-add"></div>
-            <div class="distraction-entry">
-              <div class="distraction-show-btn"></div>
+
+            <form class="distraction-entry">
+              <button class="distraction-show-btn">^</button> <!-- This is going to pop-up list -->
+              <input type="text" class="distraction-input">
+              <button class="distraction-add"></button>
+            </form>
+
+            <div class="distration-contianer">
+              <div class="distraction-content"></div>
             </div>
+            
           </div>
 
         </div>
