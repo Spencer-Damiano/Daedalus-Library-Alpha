@@ -208,7 +208,7 @@ BELOW THIS COMMENT, KEEP BELOW COMMENTED OUT UNLESS TESTING
 /* 
 Bottom Bar Code
 */
-
+/* 
 .bottom-bar {
     background-color: red;
     position: absolute;
@@ -351,4 +351,4 @@ Bottom Bar Code
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
+} */
